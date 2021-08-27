@@ -8,7 +8,7 @@ This demo repository shows how to use spring cloud contract to implement Consume
 ## Setup
 
 - A Github account and setting [SSH Key](https://github.com/settings/keys)
-- Fork contract [fraud_contract](https://github.com/lynings/fraud-contract)
+- Fork contract [consumer-driven-contract-git](https://github.com/lynings/consumer-driven-contract-git)
 - Fork privoder repository [fraud](https://github.com/lynings/fraud)
 - Fork consumer repository [loan](https://github.com/lynings/loan)
 - Generate [Github Access Token](https://github.com/settings/tokens)
@@ -18,11 +18,11 @@ Replace access token and your username in `gradle/contract-test.gradle`
 
 ```gradle
 contractRepository {
-    repositoryUrl = "git://https://github.com/<username>/fraud-contract.git"
+    repositoryUrl = "git://https://github.com/<username>/consumer-driven-contract-git.git"
 }
 
 contractRepository {
-    repositoryUrl = "git://http://github.com/<username>/fraud-contract.git"
+    repositoryUrl = "git://http://github.com/<username>/consumer-driven-contract-git.git"
     username = '<username>'
     password = '<github_access_token>'
 }

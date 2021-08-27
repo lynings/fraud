@@ -11,7 +11,7 @@ contracts {
         stringNotation = "${project.group}:${project.name}:${project.version}"
     }
     contractRepository {
-        repositoryUrl = "git://https://github.com/<username>/fraud-contract.git"
+        repositoryUrl = "git://https://github.com/<username>/consumer-driven-contract-git.git"
     }
     contractsMode = "REMOTE"
     basePackageForTests = 'com.example.fraud'
@@ -27,7 +27,7 @@ contracts {
             stringNotation = "${project.group}:${project.name}:${project.version}"
         }
         contractRepository {
-            repositoryUrl = "git://http://github.com/<username>/fraud-contract.git"
+            repositoryUrl = "git://http://github.com/<username>/consumer-driven-contract-git.git"
             username = '<username>'
             password = '<github_access_token>'
         }

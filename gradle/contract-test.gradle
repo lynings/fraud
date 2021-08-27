@@ -1,0 +1,40 @@
+apply plugin: 'spring-cloud-contract'
+
+dependencies {
+    testImplementation 'org.springframework.cloud:spring-cloud-starter-contract-verifier'
+}
+
+contracts {
+    testFramework = 'JUNIT5'
+    testMode = 'WEBTESTCLIENT'
+    contractDependency {
+        stringNotation = "${project.group}:${project.name}:${project.version}"
+    }
+    contractRepository {
+        repositoryUrl = "git://https://github.com/<username>/fraud-contract.git"
+    }
+    contractsMode = "REMOTE"
+    basePackageForTests = 'com.example.fraud'
+    baseClassMappings {
+        baseClassMapping('.*loan.amount_too_high_detected.*', 'com.example.fraud.LoanAmountTooHighSetup')
+        baseClassMapping('.*loan.fraud_detection_passed.*', 'com.example.fraud.PassFraudCheckSetup')
+        baseClassMapping('.*loan.*', 'com.example.fraud.ConsumerDrivenContractTest')
+    }
+
+    contractsProperties = ['git.branch':'main']
+    publishStubsToScm {
+        contractDependency {
+            stringNotation = "${project.group}:${project.name}:${project.version}"
+        }
+        contractRepository {
+            repositoryUrl = "git://http://github.com/<username>/fraud-contract.git"
+            username = '<username>'
+            password = '<github_access_token>'
+        }
+        contractsMode = "REMOTE"
+    }
+}
+
+contractTest {
+    useJUnitPlatform()
+}

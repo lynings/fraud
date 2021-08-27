@@ -1,0 +1,11 @@
+= Fraud API Documentation
+:toc: left
+:toclevels: 2
+
+
+[[Loan-Resource]]
+== Fraud Check
+
+include::{snippets}/amount_too_high_detected-test/validate_amount_too_high_detected/custom-auto-section.adoc[]
+
+include::{snippets}/fraud_detection_passed-test/validate_fraud_detection_passed/custom-auto-section.adoc[]
